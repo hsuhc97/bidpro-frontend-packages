@@ -1,4 +1,4 @@
-import axios, { AxiosInstance, AxiosError } from 'axios';
+import axios, { AxiosInstance, AxiosError } from "axios";
 
 interface ApiClientConfig {
   baseURL: string;
@@ -17,20 +17,19 @@ class ApiClient {
       baseURL: config.baseURL,
       timeout: 10000,
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
         ...(config.token && { Authorization: `Bearer ${config.token}` }),
       },
     });
 
     this.client.interceptors.response.use(
       (response) => {
-        console.log(response.data);
+        if (response.data.code == 200) {
+          return response.data;
+        }
         if (response.data.code === 401) {
           this.config.onUnauthorized?.();
           return Promise.reject(Error("Unauthorized"));
-        }
-        if (response.data.code == 200) {
-          return response.data;
         }
         return Promise.reject(Error(response.data.msg));
       },
@@ -56,7 +55,9 @@ class ApiClient {
   public static getInstance(config?: ApiClientConfig): ApiClient {
     if (!ApiClient.instance) {
       if (!config) {
-        throw new Error('Initial configuration is required for first instantiation');
+        throw new Error(
+          "Initial configuration is required for first instantiation"
+        );
       }
       ApiClient.instance = new ApiClient(config);
     }
@@ -70,11 +71,7 @@ class ApiClient {
 
   public setToken(token: string): void {
     this.config.token = token;
-    this.client.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-  }
-
-  public setErrorHandler(handler: (error: AxiosError) => void): void {
-    this.config.onError = handler;
+    this.client.defaults.headers.common["Authorization"] = `Bearer ${token}`;
   }
 
   public getClient(): AxiosInstance {

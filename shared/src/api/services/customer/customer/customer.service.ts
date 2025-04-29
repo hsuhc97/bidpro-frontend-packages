@@ -1,22 +1,18 @@
-// import { useApi } from "../../../context/ApiContext";
+import ApiClient from "../../../client";
+import { Customer, CustomerUpdateProfileRequest } from "./types";
 
-// export const useCustomerService = () => {
-//   const { apiClient } = useApi();
-  
-//   const getCustomer = async () => {
-//     try {
-//       const response = await apiClient?.get("/api/customer");
-//       if (!response) {
-//         throw new Error("Failed to get customers");
-//       }
-//       return response.data;
-//     } catch (error) {
-//       console.error("Error fetching customer:", error);
-//       throw error;
-//     }
-//   };
+export async function get(): Promise<Customer> {
+  const response = await ApiClient.getInstance()
+    .getClient()
+    .get("/api/customer");
+  return response.data;
+}
 
-//   return {
-//     getCustomer
-//   };
-// };
+export async function updateProfile(
+  request: CustomerUpdateProfileRequest
+): Promise<Boolean> {
+  const response = await ApiClient.getInstance()
+    .getClient()
+    .post("/api/customer/profile", request);
+  return response.data;
+}
