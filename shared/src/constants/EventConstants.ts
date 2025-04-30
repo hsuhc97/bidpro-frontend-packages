@@ -1,0 +1,4 @@
+export const EventKeys = {
+  FOLLOW_AUCTION: "FOLLOW_AUCTION",
+  UNFOLLOW_AUCTION: "UNFOLLOW_AUCTION",
+};
