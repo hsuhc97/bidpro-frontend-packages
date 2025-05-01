@@ -12,7 +12,9 @@ export type Auction = {
     status: number;
     followed: boolean;
     offered: boolean;
-    pendingOfferPrice: number;
+    offerPrice?: number;
+    pendingOfferPrice?: number;
+    offerStatus?: number;
   };
   
   export type AuctionOfferRequest = {
