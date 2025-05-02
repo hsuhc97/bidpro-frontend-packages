@@ -7,6 +7,7 @@ export type AuctionDetail = {
   skuName: string;
   attributes: Record<string, string>;
   quantity: number;
+  sortOrder: number;
 };
 
 export type AuctionDetailQueryRequest = {
