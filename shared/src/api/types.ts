@@ -26,3 +26,8 @@ export interface PaginationParams {
 export interface PaginationApi<T> {
   (params: PaginationParams): Promise<PaginatedResponse<T>>;
 }
+
+export interface Option {
+  label: string;
+  value: string;
+}

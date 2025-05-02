@@ -1,3 +1,5 @@
+import { Option } from "../../../types";
+
 export type AuctionBatch = {
   id: string;
   title: string;
@@ -7,4 +9,14 @@ export type AuctionBatch = {
   closeTime: number;
   type: number;
   status: number;
+};
+
+export type AuctionBatchFilter = {
+  spuNames: string[];
+  attrGroups: AuctionBatchAttrGroup[];
+};
+
+export type AuctionBatchAttrGroup = {
+  key: string;
+  options: Option[];
 };

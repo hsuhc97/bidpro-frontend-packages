@@ -1,5 +1,5 @@
 import ApiClient from "../../../client";
-import { Customer, CustomerUpdateProfileRequest } from "./types";
+import { Customer, CustomerUpdatePreferenceRequest, CustomerUpdateProfileRequest } from "./types";
 
 export async function get(): Promise<Customer> {
   const response = await ApiClient.getInstance()
@@ -14,5 +14,14 @@ export async function updateProfile(
   const response = await ApiClient.getInstance()
     .getClient()
     .post("/api/customer/profile", request);
+  return response.data;
+}
+
+export async function updatePreferences(
+  request: CustomerUpdatePreferenceRequest
+): Promise<Boolean> {
+  const response = await ApiClient.getInstance()
+    .getClient()
+    .post("/api/customer/preference", request);
   return response.data;
 }

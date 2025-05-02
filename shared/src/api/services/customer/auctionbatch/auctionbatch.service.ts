@@ -1,11 +1,20 @@
 import ApiClient from "../../../client";
 import { PaginationApi } from "../../../types";
-import { AuctionBatch } from "./types";
+import { AuctionBatch, AuctionBatchFilter } from "./types";
 
 export async function get(id: string): Promise<AuctionBatch> {
   const response = await ApiClient.getInstance()
     .getClient()
     .get(`/api/customer/auction-batch?id=${id}`);
+  return response.data;
+}
+
+export async function getFilter(
+  id: string
+): Promise<AuctionBatchFilter> {
+  const response = await ApiClient.getInstance()
+    .getClient()
+    .get(`/api/customer/auction-batch/filter?id=${id}`);
   return response.data;
 }
 
