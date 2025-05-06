@@ -7,6 +7,7 @@ export type AuctionBatch = {
   auctionNumber: number;
   quantity: number;
   closeTime: number;
+  filter?: AuctionBatchFilter;
   type: number;
   status: number;
 };
