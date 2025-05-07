@@ -22,5 +22,10 @@ export type Auction = {
     offerPrice: number;
   };
   
-  
+  export type AuctionOfferResult = {
+    offerPrice?: number;
+    pendingOfferPrice?: number;
+    offered: boolean;
+    offerStatus?: number;
+  }
 

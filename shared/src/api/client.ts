@@ -71,7 +71,7 @@ class ApiClient {
 
   public setToken(token: string): void {
     this.config.token = token;
-    this.client.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+    this.client.defaults.headers["Authorization"] = `Bearer ${token}`;
   }
 
   public getClient(): AxiosInstance {

@@ -1,6 +1,6 @@
 import ApiClient from "../../../client";
 import { PaginationApi } from "../../../types";
-import { Auction, AuctionOfferRequest } from "./types";
+import { Auction, AuctionOfferRequest, AuctionOfferResult } from "./types";
 
 export async function get(id: string): Promise<Auction> {
   const response = await ApiClient.getInstance()
@@ -34,7 +34,7 @@ export async function unfollow(id: string): Promise<Boolean> {
   return response.data;
 }
 
-export async function offer(request: AuctionOfferRequest): Promise<Boolean> {
+export async function offer(request: AuctionOfferRequest): Promise<AuctionOfferResult> {
   const response = await ApiClient.getInstance()
     .getClient()
     .post("/api/customer/auction/offer", request);
