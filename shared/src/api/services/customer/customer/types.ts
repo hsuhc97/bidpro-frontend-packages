@@ -3,6 +3,10 @@ export type Customer = {
     spaceId: string;
     status: number;
     preferences: Record<string, string>;
+    bidCredit: {
+        totalLimit: number;
+        availableLimit: number;
+    }
 }
 
 export type CustomerUpdateProfileRequest = {
