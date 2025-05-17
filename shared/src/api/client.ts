@@ -4,6 +4,7 @@ interface ApiClientConfig {
   baseURL: string;
   token?: string;
   onUnauthorized?: () => void;
+  onRedirect?: (url: string) => void;
 }
 
 class ApiClient {
@@ -26,6 +27,10 @@ class ApiClient {
       (response) => {
         if (response.data.code == 200) {
           return response.data;
+        }
+        if (response.data.code === 302) {
+          this.config.onRedirect?.(response.data.data);
+          return Promise.reject(Error("Redirect"));
         }
         if (response.data.code === 401) {
           this.config.onUnauthorized?.();

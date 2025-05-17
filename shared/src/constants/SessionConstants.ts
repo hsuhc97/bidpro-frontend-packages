@@ -1,6 +1,6 @@
 export const AuthType = {
-  SMS: 1,
-  PASSWORD: 2,
+  SMS_OTP: "SMS OTP",
+  PASSWORD: "PASSWORD",
 };
 
 export const UserStatus = {

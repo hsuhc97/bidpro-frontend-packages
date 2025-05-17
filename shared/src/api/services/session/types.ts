@@ -1,13 +1,11 @@
-export type SpaceLoginRequest = {
-  domain: string;
-  type: number;
+export type LoginRequest = {
+  type: string;
   identifier: string;
   credential: string;
-  config: string;
+  config?: string;
 };
 
-export type UserLoginResult = {
+export type LoginResult = {
   id: string;
-  status: number;
   token: string;
 }

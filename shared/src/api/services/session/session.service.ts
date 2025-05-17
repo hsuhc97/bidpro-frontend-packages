@@ -1,11 +1,11 @@
 import ApiClient from "../../client";
-import { SpaceLoginRequest, UserLoginResult } from "./types";
+import { LoginRequest, LoginResult } from "./types";
 
-export async function loginCustomer(
-  request: SpaceLoginRequest
-): Promise<UserLoginResult> {
+export async function login(
+  request: LoginRequest
+): Promise<LoginResult> {
   const response = await ApiClient.getInstance()
     .getClient()
-    .post("/api/session/login/customer", request);
+    .post("/api/session/login", request);
   return response.data;
 }
