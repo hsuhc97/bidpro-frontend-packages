@@ -14,7 +14,8 @@ export type TenderPackage = {
 
 export type TenderPackageFilter = {
   items: string[];
-  attrGroups: TenderItemAttrFilter[];
+  grades: string[];
+  lockConditions: string[];
 };
 
 export type TenderItemAttrFilter = {

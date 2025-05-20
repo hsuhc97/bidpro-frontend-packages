@@ -3,10 +3,10 @@ export type User = {
     language: string;
     currency: string;
     timezone: string;
-    tenderCreditLimit: {
-        totalCreditLimit: number;
-        usedCreditLimit: number;
-        availableCreditLimit: number;
+    quota: {
+        total: number;
+        used: number;
+        available: number;
         deposit: number;
         currency: string;
     }

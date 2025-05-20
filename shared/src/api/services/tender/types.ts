@@ -3,5 +3,5 @@ export type Tender = {
   image: string;
   name: string;
   description: string;
-  numberOfProcessingTenderLot: number;
+  numberOfProcessingLots: number;
 };
