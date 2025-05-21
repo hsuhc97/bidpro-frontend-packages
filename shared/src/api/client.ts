@@ -1,4 +1,5 @@
 import axios, { AxiosInstance, AxiosError } from "axios";
+import { RedirectError, UnauthorizedError } from "../errors/RedirectError";
 
 interface ApiClientConfig {
   baseURL: string;
@@ -30,11 +31,11 @@ class ApiClient {
         }
         if (response.data.code === 302) {
           this.config.onRedirect?.(response.data.data);
-          return Promise.reject(Error("Redirect"));
+          return Promise.reject(new RedirectError(response.data.data));
         }
         if (response.data.code === 401) {
           this.config.onUnauthorized?.();
-          return Promise.reject(Error("Unauthorized"));
+          return Promise.reject(new UnauthorizedError());
         }
         return Promise.reject(Error(response.data.msg));
       },
@@ -42,7 +43,7 @@ class ApiClient {
         if (axios.isAxiosError(error)) {
           if (error.response?.status === 401) {
             this.config.onUnauthorized?.();
-            return Promise.reject(error);
+            return Promise.reject(new UnauthorizedError());
           }
           if (
             error.code === "ECONNABORTED" ||
