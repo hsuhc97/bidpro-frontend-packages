@@ -1,5 +1,4 @@
-import ApiClient from "../../client";
-import { PaginationApi } from "../../types";
+import { ApiClient, PaginationApi } from "../..";
 import { TenderLotItem } from "./types";
 
 export const query: PaginationApi<TenderLotItem> = async (params) => {

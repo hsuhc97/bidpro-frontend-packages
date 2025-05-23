@@ -8,7 +8,7 @@ export type TenderPackage = {
   quantity: number;
   closeTime: number;
   filter?: TenderPackageFilter;
-  type: string;
+  bidType: string;
   status: string;
 };
 

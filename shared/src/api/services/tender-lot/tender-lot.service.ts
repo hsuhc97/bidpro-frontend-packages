@@ -1,5 +1,4 @@
-import ApiClient from "../../client";
-import { PaginationApi } from "../../types";
+import { ApiClient, PaginationApi } from "../..";
 import { TenderLot, TenderLotBidRequest, TenderLotBidResult } from "./types";
 
 export async function get(id: string): Promise<TenderLot> {

@@ -1,5 +1,5 @@
-import axios, { AxiosInstance, AxiosError } from "axios";
-import { RedirectError, UnauthorizedError } from "../errors/RedirectError";
+import axios, { AxiosInstance, AxiosError } from "axios"
+import { RedirectError, UnauthorizedError } from "../errors";
 
 interface ApiClientConfig {
   baseURL: string;

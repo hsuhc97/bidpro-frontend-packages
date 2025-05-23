@@ -1,4 +1,4 @@
-import ApiClient from "../../client";
+import { ApiClient } from "../..";
 import { User, ProfileUpdateRequest } from "./types";
 
 export async function get(): Promise<User> {

@@ -1,5 +1,4 @@
-import ApiClient from "../../client";
-import { PaginationApi } from "../../types";
+import { ApiClient, PaginationApi } from "../..";
 import { SupplierGrade } from "./types";
 
 export const query: PaginationApi<SupplierGrade> = async (params) => {

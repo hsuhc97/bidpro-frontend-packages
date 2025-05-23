@@ -1,4 +1,3 @@
-export type SmsSendVerificationCodeRequest = {
-  regionCode: string;
-  phoneNumber: string;
+export type SendOTPRequest = {
+  mobileNo: string;
 };

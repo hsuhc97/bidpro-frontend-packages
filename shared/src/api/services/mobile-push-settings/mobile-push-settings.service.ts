@@ -1,4 +1,4 @@
-import ApiClient from "../../client";
+import { ApiClient } from "../..";
 import { MobilePushSettingsApplyRequest } from "./types";
 
 export async function apply(

@@ -1,11 +1,11 @@
-import ApiClient from "../../client";
-import { SmsSendVerificationCodeRequest } from "./types";
+import { ApiClient } from "../..";
+import { SendOTPRequest } from "./types";
 
-export async function sendVerificationCode(
-  request: SmsSendVerificationCodeRequest
+export async function sendOTP(
+  request: SendOTPRequest
 ): Promise<Boolean> {
   const response = await ApiClient.getInstance()
     .getClient()
-    .post("/api/sms/send-verification-code", request);
+    .post("/api/sms/send-otp", request);
   return response.data;
 }
