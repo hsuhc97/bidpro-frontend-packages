@@ -1,6 +1,6 @@
 {
-  "name": "@bidpro-frontend/shared",
-  "version": "1.0.7",
+  "name": "@bidpro-frontend/common",
+  "version": "1.0.1",
   "description": "Shared code for BidPro Frontend",
   "main": "dist/index.js",
   "module": "dist/index.mjs",

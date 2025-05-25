@@ -59,6 +59,7 @@ class ApiClient {
   }
 
   public static getInstance(config?: ApiClientConfig): ApiClient {
+    console.log("going to init api client with config", config);
     if (!ApiClient.instance) {
       if (!config) {
         throw new Error(
