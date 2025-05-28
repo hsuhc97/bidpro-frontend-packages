@@ -1,7 +1,7 @@
 {
-  "name": "@bidpro-frontend/shared",
-  "version": "1.1.5",
-  "description": "Shared code for BidPro Frontend",
+  "name": "lasterp-tender-frontend-shared",
+  "version": "1.0.1",
+  "description": "Shared code for Lasterp Tender Frontend",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
