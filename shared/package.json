@@ -1,0 +1,21 @@
+{
+  "name": "@bidpro-frontend/shared",
+  "version": "1.1.5",
+  "description": "Shared code for BidPro Frontend",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsup src/index.ts --dts --format esm,cjs --outDir dist --clean",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "axios": "^1.9.0",
+    "react": "18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "~18.3.12",
+    "tsup": "^8.5.0",
+    "typescript": "^5.3.3"
+  }
+}
