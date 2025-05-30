@@ -7,5 +7,7 @@ export type LoginRequest = {
 
 export type LoginResult = {
   id: string;
+  userId: string;
+  status: string;
   token: string;
 }

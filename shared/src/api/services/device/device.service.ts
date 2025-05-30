@@ -1,11 +1,11 @@
 import { ApiClient } from "../..";
-import { SendOTPRequest } from "./types";
+import { DeviceApplyRequest } from "./types";
 
-export async function sendOTP(
-  request: SendOTPRequest
+export async function apply(
+  request: DeviceApplyRequest
 ): Promise<Boolean> {
   const response = await ApiClient.getInstance()
     .getClient()
-    .post("/api/sms/send-otp", request);
+    .post("/api/client/device", request);
   return response.data;
 }

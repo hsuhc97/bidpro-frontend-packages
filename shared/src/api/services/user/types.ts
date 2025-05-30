@@ -1,24 +1,27 @@
 export type User = {
     id: string;
     status: string;
-    language: string;
+    name: string;
+    email: string;
     currency: string;
+    language: string;
     timezone: string;
     creditLimit: {
         creditLimit: number;
-        usedLimit: number;
-        availableLimit: number;
+        usedCreditLimit: number;
+        availableCreditLimit: number;
         deposit: number;
         depositCurrency: string;
     }
 }
 
 export type UserUpdateRequest = {
-    email?: string;
     language?: string;
     timezone?: string;
 }
 
 export type CustomerUpdateRequest = {
-    currency: string;
+    name?: string;
+    email?: string;
+    currency?: string;
 }

@@ -1,6 +1,6 @@
 {
   "name": "lasterp-tender-frontend-shared",
-  "version": "1.0.1",
+  "version": "1.0.9",
   "description": "Shared code for Lasterp Tender Frontend",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
